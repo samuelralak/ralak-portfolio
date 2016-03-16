@@ -38,6 +38,9 @@ gem "font-awesome-rails"
 # User simple form
 gem 'simple_form'
 
+# User haml layouts
+gem "haml-rails", "~> 0.9"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
