@@ -25,6 +25,7 @@ gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
@@ -40,6 +41,9 @@ gem 'simple_form'
 
 # User haml layouts
 gem "haml-rails", "~> 0.9"
+
+# Wysywyg editor
+gem 'bootstrap-wysihtml5-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
