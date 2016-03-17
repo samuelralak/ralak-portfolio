@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160317003435) do
+ActiveRecord::Schema.define(version: 20160317015914) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20160317003435) do
     t.datetime "updated_at",   null: false
     t.string   "unique_token"
     t.string   "slug"
+    t.string   "link"
   end
 
   add_index "projects", ["slug"], name: "index_projects_on_slug", unique: true, using: :btree
