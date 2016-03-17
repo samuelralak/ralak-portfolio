@@ -4,7 +4,7 @@
       - if user_signed_in?
         = link_to 'New Project', new_project_path, class: 'btn btn-info pull-right'
       = "Recent Work"
-- @projects.each do |project|
+- @projects.each_with_index do |project, index|
   .row
     .col-md-7
       = link_to '' do
@@ -21,8 +21,8 @@
       - if user_signed_in?
         = link_to project, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do
           = 'Delete'
-  %br
-  %br
+  - unless index.eql?((@projects.length-1))
+    %hr
 
 
 / %p#notice= notice
