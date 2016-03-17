@@ -2,6 +2,7 @@
 	= f.error_notification
 
 	.form-inputs
+		= f.input :unique_token, as: :hidden
 		= f.input :title
 		= f.input :description, as: :wysihtml5
 		.row
@@ -9,6 +10,9 @@
 				= f.input :start_date
 			.col-md-6
 				= f.input :end_date
-	.form-inputs.dropzone#dropzone
+	.form-inputs
+		%label Project Images
+		.dropzone#dropzone
+	%br
 	.form-actions
-		= f.button :submit
+		= f.button :submit, class: 'btn btn-success'
