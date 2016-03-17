@@ -13,13 +13,14 @@
       %h4= project.link
       %p 
         = project.description
-        = truncate(project.description.html_safe, length: 90, omission: '...')
+        = truncate(project.description.html_safe, length: 70, omission: '...')
       = link_to project, class: 'btn btn-primary' do
         = 'View Project'
       = "&nbsp;&nbsp;".html_safe
       = link_to project, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do
         = 'Delete'
-    %br
+  %br
+  %br
 
 
 / %p#notice= notice
