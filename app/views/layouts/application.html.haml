@@ -9,12 +9,24 @@
 	%body
 		%nav.navbar.navbar-inverse.navbar-fixed-top
 			.container
-				- if user_signed_in?
-					%p.navbar-text.navbar-right
-						= link_to 'Sign Out', destroy_user_session_path, method: 'delete'
-				- else
-					%p.navbar-text.navbar-right
-						= link_to 'Sign In', new_user_session_path
+				.navbar-header
+					%button{ :type => "button", :class => "navbar-toggle collapsed", :data => { :toggle => "collapse", :target => "#navbar" } }
+						%span.sr-only
+							Toggle navigation
+						%span.icon-bar
+						%span.icon-bar
+						%span.icon-bar
+					= link_to 'Samuel Ralak', root_path, class: 'navbar-brand'
+				#navbar.navbar-collapse.collapse
+					%ul.nav.navbar-nav.navbar-right
+						- if user_signed_in?
+							%li
+								= link_to destroy_user_session_path, :method => :delete do
+									= fa_icon 'sign-out', text: 'Sign Out'
+						- else
+							%li
+								= link_to new_user_session_path do
+									= fa_icon 'sign-in', text: 'Sign In'
 		.container
 			= yield
 			%hr
