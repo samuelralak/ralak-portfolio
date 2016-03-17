@@ -13,7 +13,7 @@
       %h4= project.link
       %p 
         = project.description
-        = truncate(project.description, length: 140, omission: '...')
+        = truncate(project.description.html_safe, length: 90, omission: '...')
       = link_to project, class: 'btn btn-primary' do
         = 'View Project'
       = "&nbsp;&nbsp;".html_safe
