@@ -15,10 +15,11 @@
 	.col-md-4
 		%h3 Project Description
 		= @project.description.html_safe
-
+%br
 .row
 	.col-lg-12
 		%h3 More Screenshots
+		%hr
 
 	- @project.project_images.each do |i|
 		.col-sm-3.col-xs-6
