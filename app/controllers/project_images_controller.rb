@@ -1,5 +1,10 @@
 class ProjectImagesController < ApplicationController
+  before_action :authenticate_user!, only: [:edit, :create, :new, :update, :destroy]
   skip_before_action :verify_authenticity_token
+
+  def show
+    @image = ProjectImage.find(params[:id])
+  end
 
   def create
     @image = ProjectImage.new(image_params)

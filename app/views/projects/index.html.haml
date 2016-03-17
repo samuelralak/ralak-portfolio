@@ -1,7 +1,8 @@
 .row
   .col-md-12
     %h1.page-header 
-      = link_to 'New Project', new_project_path, class: 'btn btn-info pull-right'
+      - if user_signed_in?
+        = link_to 'New Project', new_project_path, class: 'btn btn-info pull-right'
       = "Recent Work"
 - @projects.each do |project|
   .row
@@ -17,8 +18,9 @@
       = link_to project, class: 'btn btn-primary' do
         = 'View Project'
       = "&nbsp;&nbsp;".html_safe
-      = link_to project, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do
-        = 'Delete'
+      - if user_signed_in?
+        = link_to project, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do
+          = 'Delete'
   %br
   %br
 

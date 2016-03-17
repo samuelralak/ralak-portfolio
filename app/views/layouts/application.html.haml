@@ -9,6 +9,12 @@
 	%body
 		%nav.navbar.navbar-inverse.navbar-fixed-top
 			.container
+				- if user_signed_in?
+					%p.navbar-text.navbar-right
+						= link_to 'Sign Out', destroy_user_session_path, method: 'delete'
+				- else
+					%p.navbar-text.navbar-right
+						= link_to 'Sign In', new_user_session_path
 		.container
 			= yield
 			%hr

@@ -2,15 +2,16 @@
 	.col-lg-12
 		%h1.page-header
 			.pull-right
-				= link_to 'Edit', edit_project_path(@project), class: 'btn btn-info'
+				- if user_signed_in?
+					= link_to 'Edit', edit_project_path(@project), class: 'btn btn-info'
 				= link_to 'Back', root_path, class: 'btn btn-default'
 			= @project.title
 			%small
 				= @project.link
 
 .row
-	.col-md-8
-		= image_tag @project.project_images[0].screenshot.url(:large), class: 'img-responsive'
+	.col-md-8#displayImage
+		= render 'projects/project_image', img: @project.project_images[0]
 	.col-md-4
 		%h3 Project Description
 		= @project.description.html_safe
@@ -21,7 +22,7 @@
 
 	- @project.project_images.each do |i|
 		.col-sm-3.col-xs-6
-			= link_to '#' do
+			= link_to i, remote: true do
 				= image_tag i.screenshot.url(:thumb), class: 'img-responsive portfolio-item'
 
 

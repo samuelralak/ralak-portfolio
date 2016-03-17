@@ -65,6 +65,9 @@ gem 'aws-sdk', '< 2.0'
 # User Friendly Id for pretty urls
 gem 'friendly_id', '~> 5.1.0'
 
+# User devise for Authentication
+gem 'devise'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
