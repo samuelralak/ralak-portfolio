@@ -54,8 +54,16 @@ gem 'puma'
 # Use paperclip for image uploads
 gem "paperclip", "~> 4.3"
 
+# amazon web services
+gem 'delayed_paperclip'
+gem 'aws-s3'
+gem 'aws-sdk', '< 2.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# User Friendly Id for pretty urls
+gem 'friendly_id', '~> 5.1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

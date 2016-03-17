@@ -12,5 +12,7 @@
 !/log/.keep
 /tmp
 
+/public/system/*
+
 # Ignore database.yml file
 /config/database.yml

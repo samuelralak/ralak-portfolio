@@ -1,5 +1,10 @@
-%h1 Editing Project
-= render 'form'
-= link_to 'Show', @project
-|
-= link_to 'Back', projects_path
+.row
+	.col-md-12
+		%h1.page-header
+			.pull-right 
+				= link_to 'Show', @project, class: 'btn btn-primary'
+				= link_to 'Back', root_path, class: 'btn btn-default'
+			= "Editing Project"
+.row
+	.col-md-8.col-md-offset-2
+		= render 'form'

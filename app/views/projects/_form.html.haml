@@ -10,9 +10,10 @@
 				= f.input :start_date
 			.col-md-6
 				= f.input :end_date
-	.form-inputs
-		%label Project Images
-		.dropzone#dropzone
+	- unless action_name.eql?('edit')
+		.form-inputs
+			%label Project Images
+			.dropzone#dropzone
 	%br
 	.form-actions
 		= f.button :submit, class: 'btn btn-success'

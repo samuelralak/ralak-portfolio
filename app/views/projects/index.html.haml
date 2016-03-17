@@ -1,38 +1,42 @@
 .row
   .col-md-12
-    %h1.page-header Listing Projects
-.row
-  .col-md-7
-    = link_to '' do
-      = image_tag 'http://placehold.it/700x300', class: 'img-responsive'
-  .col-md-5
-    %h3 Project One
-    %h4 Subheading
-    %p 
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.
-    = link_to '#', class: 'btn btn-primary' do
-      = 'View Project'
+    %h1.page-header 
+      = link_to 'New Project', new_project_path, class: 'btn btn-info pull-right'
+      = "Recent Work"
+- @projects.each do |project|
+  .row
+    .col-md-7
+      = link_to '' do
+        = image_tag project.project_images[0].screenshot.url(:medium), class: 'img-responsive'
+    .col-md-5
+      %h3= project.title
+      %p 
+        = project.description
+      = link_to project, class: 'btn btn-primary' do
+        = 'View Project'
+      = link_to project, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do
+        = 'Delete'
 
 
-%p#notice= notice
-%h1 Listing Projects
-%table
-  %thead
-    %tr
-      %th Title
-      %th Description
-      %th Start date
-      %th End date
-      %th{:colspan => "3"}
-  %tbody
-    - @projects.each do |project|
-      %tr
-        %td= project.title
-        %td= project.description
-        %td= project.start_date
-        %td= project.end_date
-        %td= link_to 'Show', project
-        %td= link_to 'Edit', edit_project_path(project)
-        %td= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }
-%br/
-= link_to 'New Project', new_project_path
+/ %p#notice= notice
+/ %h1 Listing Projects
+/ %table
+/   %thead
+/     %tr
+/       %th Title
+/       %th Description
+/       %th Start date
+/       %th End date
+/       %th{:colspan => "3"}
+/   %tbody
+/     - @projects.each do |project|
+/       %tr
+/         %td= project.title
+/         %td= project.description
+/         %td= project.start_date
+/         %td= project.end_date
+/         %td= link_to 'Show', project
+/         %td= link_to 'Edit', edit_project_path(project)
+/         %td= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }
+/ %br/
+/ = link_to 'New Project', new_project_path
